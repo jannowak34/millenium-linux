@@ -1,0 +1,31 @@
+name: Build ISO
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:bookworm
+      options: --privileged
+    steps:
+      - name: Install git and certificates
+        run: apt-get update && apt-get install -y git ca-certificates python3
+      - uses: actions/checkout@v4
+      - name: Build
+        run: bash millennium-linux/build.sh
+      - name: Publish ISO as a release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v2000.1-${{ github.run_number }}
+          name: Millennium Linux 2000.1 (build ${{ github.run_number }})
+          files: "millennium-linux/*.iso"
+      - name: Keep the build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: millennium-linux/build.log
