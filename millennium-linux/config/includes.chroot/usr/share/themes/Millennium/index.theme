@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Millennium
+Comment=Y2K gel / bondi-blue theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Millennium
+MetacityTheme=Millennium
+IconTheme=oxygen

@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+cat > /etc/os-release << 'OSR'
+PRETTY_NAME="Millennium Linux 2000.1"
+NAME="Millennium Linux"
+VERSION_ID="2000.1"
+VERSION="2000.1 (Bondi)"
+ID=millennium
+ID_LIKE=debian
+HOME_URL="https://www.debian.org/"
+OSR
+echo "Millennium Linux 2000.1 \n \l" > /etc/issue
+echo "Millennium Linux 2000.1" > /etc/issue.net
+# lighter boot: services a 2012 laptop does not need
+systemctl disable ModemManager.service 2>/dev/null || true
+systemctl disable cups-browsed.service 2>/dev/null || true
+systemctl disable bluetooth.service 2>/dev/null || true
+# make the default GTK + icon theme system-wide
+mkdir -p /etc/gtk-3.0
+cat > /etc/gtk-3.0/settings.ini << 'GTK'
+[Settings]
+gtk-theme-name=Millennium
+gtk-icon-theme-name=oxygen
+gtk-font-name=DejaVu Sans 9
+GTK

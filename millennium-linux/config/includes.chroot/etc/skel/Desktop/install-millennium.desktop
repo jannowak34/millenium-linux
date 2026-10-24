@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Install Millennium Linux
+Comment=Install to hard disk or SSD
+Exec=sudo calamares
+Icon=system-software-install
+Terminal=false

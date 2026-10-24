@@ -1,0 +1,40 @@
+# --- base desktop (light) ---
+xfce4
+xfce4-goodies
+xfce4-whiskermenu-plugin
+xfce4-pulseaudio-plugin
+lightdm
+lightdm-gtk-greeter
+xorg
+network-manager
+network-manager-gnome
+pulseaudio
+pavucontrol
+gvfs-backends
+policykit-1-gnome
+fonts-dejavu
+fonts-liberation
+oxygen-icon-theme
+# --- apps ---
+firefox-esr
+firefox-esr-l10n-pl
+abiword
+gnumeric
+vlc
+ristretto
+mousepad
+synaptic
+file-roller
+# --- performance ---
+zram-tools
+# --- installer ---
+calamares
+calamares-settings-debian
+# --- firmware (wifi etc.) ---
+firmware-linux-free
+firmware-linux-nonfree
+firmware-misc-nonfree
+firmware-atheros
+firmware-realtek
+firmware-iwlwifi
+firmware-brcm80211
